@@ -1,0 +1,7 @@
+//Update a file
+echo "test" | sudo tee -a /path/to/target/file
+
+sudo bash -c 'echo "test" >> /path/to/target/file'
+
+
+
