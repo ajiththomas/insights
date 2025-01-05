@@ -1,0 +1,34 @@
+To Compile a Standalone .cs File
+If you want to compile a single C# file without creating a project, use the csc compiler directly:
+
+Install .NET SDK (if not already installed)
+
+Ensure the .NET SDK is installed, as it includes the csc (C# compiler) tool.
+
+Compile with csc
+
+csc -out:RunasCs.exe RunasCs.cs
+Or Use Mono (Optional Alternative)
+
+If you're using Mono instead of the .NET SDK:
+mcs -out:RunasCs.exe RunasCs.cs
+
+If You Need a .csproj File for dotnet build
+
+Create a new console application project:
+dotnet new console -n RunasCsProject
+
+Replace the auto-generated Program.cs file with the RunasCs.cs file:
+mv RunasCs.cs RunasCsProject/RunasCs.cs
+
+Navigate to the project directory:
+cd RunasCsProject
+
+Build the project:
+dotnet build -o output
+
+The resulting executable (RunasCs.exe) will be in the output folder.
+
+Summary
+Use csc for standalone .cs file compilation.
+Use dotnet build for project-based compilation, which requires a .csproj file.
